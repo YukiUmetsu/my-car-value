@@ -58,6 +58,19 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## API Routes
+
+| HTTP Method  | Route | Body or Query String| Description |
+| ------------- | ------------- | ------------- | ------------- |
+| POST | /auth/signup | Body - {email, password} | Create a new user and sign in |
+| POST | /auth/signin | Body - {email, password} | Sign in an existing user |
+| GET  | /reports     | QS - make, model, year, mileage, longitude, latitude| Get an estimate of the cards value |
+| POST | /reports     | Body - {make, model, year, mileage, longitude, latitude} | Report how much a vehicle sold for | 
+| PATCH | /reports    | Body - { approved }      | Approve or reject a report submitted by a user |  
+
+<br/>
+
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
