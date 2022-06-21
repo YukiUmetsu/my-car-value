@@ -4,8 +4,26 @@ content-type: application/json
 
 {
     "email": "dadadada@gmail.com",
-    "password": "fjewoajeodvsa"
+    "password": "testpassword123"
 }
+
+### Sign in a user
+POST http://localhost:3000/auth/signin
+content-type: application/json
+
+{
+    "email": "dadadada@gmail.com",
+    "password": "testpassword123"
+}
+
+
+### Show which user you're logged in as
+GET http://localhost:3000/auth/whoami
+content-type: application/json
+
+### Sign out a user
+POST http://localhost:3000/auth/signout
+content-type: application/json
 
 
 ### find a particular user with a given ID
@@ -17,7 +35,7 @@ GET http://localhost:3000/auth/?email=tetetete@gmail.com
 
 
 ### remove a particular user with a given id
-DELETE http://localhost:3000/auth/3
+DELETE http://localhost:3000/auth/1
 
 
 ### update a user
@@ -27,3 +45,4 @@ content-type: application/json
 {
     "email": "tetetete@gmail.com"
 }
+
