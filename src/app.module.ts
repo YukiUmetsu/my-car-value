@@ -22,7 +22,7 @@ const cookieSession = require('cookie-session');
         return {
           type: 'sqlite',
           database: config.get<string>('DB_NAME'),
-          synchronize: true,
+          synchronize: true,  
           entities: [User, Report],
         };
       },
@@ -42,11 +42,13 @@ const cookieSession = require('cookie-session');
   ],
 })
 export class AppModule {
+  constructor(private configService: ConfigService) {}
+
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply(
         cookieSession({
-          keys: ['9312kfa8aflksaob8hea'],
+          keys: [this.configService.get('COOKIE_KEY')],
         }),
       ).forRoutes('*');
   }
